@@ -1,0 +1,186 @@
+@import url("normalize.css");
+
+/* General Demo Style */
+@font-face {
+  font-family: "icons";
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Open Sans Condensed", "Arial Narrow", serif;
+  background: #ddd
+    url(https://images.pexels.com/photos/2117938/pexels-photo-2117938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+    repeat top left;
+  font-weight: 400;
+  font-size: 15px;
+  color: #333;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+.container > header {
+  margin: 10px 10px 0px 10px;
+  padding: 20px 10px 0px 10px;
+  position: relative;
+  display: block;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+.container > header h1 {
+  line-height: 36px;
+  margin: 0;
+  position: relative;
+  font-weight: 700;
+  font-size: 40px;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.container > header h1 span {
+  font-weight: 700;
+  font-size: 40px;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.main {
+  width: 672px;
+  height: 480px;
+  padding: 30px 0;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.view:hover .s2 {
+  transform: translate3d(59px, 0, 0) rotate3d(0, 1, 0, -45deg);
+}
+.view:hover .s3,
+.view:hover .s5 {
+  transform: translate3d(59px, 0, 0) rotate3d(0, 1, 0, 90deg);
+}
+.view:hover .s4 {
+  transform: translate3d(59px, 0, 0) rotate3d(0, 1, 0, -90deg);
+}
+
+.view .s1 > .overlay {
+  background: linear-gradient(
+    right,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.view .s2 > .overlay {
+  background: linear-gradient(
+    left,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.view .s3 > .overlay {
+  background: linear-gradient(
+    right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.view .s4 > .overlay {
+  background: linear-gradient(
+    left,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.view .s5 > .overlay {
+  background: linear-gradient(
+    left,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.view {
+  width: 316px;
+  height: 216px;
+  margin: 10px;
+  float: left;
+  position: relative;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 3%;
+  perspective: 500px;
+}
+
+.view .slice {
+  width: 60px;
+  height: 100%;
+  z-index: 100;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 150ms ease-in-out;
+  backface-visibility: hidden;
+}
+
+.view .s2,
+.view .s3,
+.view .s4,
+.view .s5 {
+  transform: translate3d(60px, 0, 0);
+  background-size: cover;
+}
+.view .s1 {
+  background-position: 0px 0px;
+  background-size: cover;
+}
+.view .s2 {
+  background-position: -60px 0px;
+  background-size: cover;
+}
+.view .s3 {
+  background-position: -120px 0px;
+  background-size: cover;
+}
+.view .s4 {
+  background-position: -180px 0px;
+  background-size: cover;
+}
+.view .s5 {
+  background-position: -240px 0px;
+  background-size: cover;
+}
+
+.view .overlay {
+  width: 60px;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 150ms ease-in-out;
+}
+
+.view:hover .overlay {
+  opacity: 1;
+}
+
+img {
+  position: absolute;
+  z-index: 0;
+  transition: left 0.3s ease-in-out;
+  background-size: cover;
+}

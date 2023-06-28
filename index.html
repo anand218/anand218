@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Thumbnail Hover Effects</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/modernizr.custom.69142.js"></script>
+  </head>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+          <h1><span>3D Thumbnail</span> Hover Effects</h1>
+        </header>
+  
+        <div id="grid" class="main">
+          <div class="view">
+            <img src="imgaes/1.jpg" alt="" />
+          </div>
+          <div class="view">
+            <img src="imgaes/2.jpg" />
+          </div>
+          <div class="view">
+            <img src="imgaes/3.jpg" />
+          </div>
+          <div class="view">
+            <img src="imgaes/4.jpg" />
+          </div>
+        </div>
+      </div>
+
+      <script
+      type="text/javascript"
+      src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      Modernizr.load({
+        test: Modernizr.csstransforms3d && Modernizr.csstransitions,
+        yep: ["js/jquery.hoverfold.js"],
+        nope: "css/fallback.css",
+        callback: function (url, result, key) {
+          if (url === "js/jquery.hoverfold.js") {
+            $("#grid").hoverfold();
+          }
+        },
+      });
+    </script>
+</body>
+</html>
